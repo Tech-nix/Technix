@@ -168,8 +168,36 @@
     color: var(--dark-text); /* שינינו לשחור */
     font-weight: 700; /* עשינו את הפונט עבה יותר */
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.8); /* הוספנו הילה לבנה */
-}        .btn-orange { background: var(--primary-orange); color: white; padding: 12px 30px; font-weight: 700; border-radius: 4px; display: inline-block; }
-        .btn-orange:hover { background: #e69500; }
+}
+/* כפתור הזמנת שירות ממורכז, נוצץ וזז */
+.btn-orange {
+    background: linear-gradient(45deg, #FF8C00, #FFA500, #FFDF00, #FF8C00);
+    background-size: 300% 300%;
+    color: #000;
+    padding: 12px 35px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    display: block; /* מאפשר את המירכוז */
+    width: fit-content;
+    margin: 20px auto 0 auto; /* ממרכז אותו בדיוק באמצע מתחת לפסקה */
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.6);
+    animation: btnPulseShiny 2s infinite;
+    border: 2px solid #fff;
+    text-decoration: none;
+}
+
+@keyframes btnPulseShiny {
+    0% { background-position: 0% 50%; transform: scale(1); }
+    50% { background-position: 100% 50%; transform: scale(1.05); } /* תזוזה קטנה החוצה */
+    100% { background-position: 0% 50%; transform: scale(1); }
+}
+
+.btn-orange:hover {
+    animation: none; /* עוצר את התזוזה הקבועה כששמים עליו עכבר */
+    transform: scale(1.1); /* מגדיל אותו עוד קצת בלחיצה */
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.8);
+}
         
         .hero-reviews-wrapper { width: 350px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 4px solid var(--primary-orange); }
         .hero-reviews-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
@@ -335,7 +363,6 @@
     <section class="hero-banner">
         <div class="container hero-layout">
             <div class="hero-text">
-                <h1>טכנאי מוצרי חשמל ביתיים - מכונות כביסה - מייבשים- תנורי אפייה - מדיחים - מקררים</h1>
                 <p>מעל 5 שנות ניסיון. תיקון מקצועי לכל סוגי התקלות בבית הלקוח. שירות מהיר, מקצועי, ואמין.</p>
                 <a href="https://wa.me/972549448001" class="btn-orange">הזמן שירות בקליק</a>
             </div>
