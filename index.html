@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="O4LeHYM4bXbgx23XumwIuym8_u7VEMsgqWIZld9IXXs" />
-<title>טכניקס - טכנאי מכונות כביסה, מייבשים ותנורי אפייה בחיפה | רביע</title>
-<meta name="description" content="רביע מטכניקס (Technix) - טכנאי למכונות כביסה, מייבשים, תנורי אפייה, מקררים ומדיחים בחיפה והסביבה. שירות אמין עם מאות המלצות. הזמינו טכנאי עכשיו!">    
+    <title>Technix - שירות רשמי למוצרי חשמל</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -156,9 +155,20 @@
         .hero-banner { background: url('my-new-banner.png') center/cover no-repeat; padding: 60px 0; position: relative; min-height: 450px; display: flex; align-items: center; }
         .hero-banner::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%); z-index: 1; }        .hero-layout { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; width: 100%; }
         .hero-text { max-width: 500px; padding-top: 60px; margin-right: 0; text-align: right; }
-        <h1>טכנאי מכונות כביסה, מייבשים ותנורי אפייה בחיפה</h1>
-        <p>נעים מאוד, אני <strong>רביע</strong>, טכנאי ראשי בטכניקס (Technix). מומחה לתיקון מכונות כביסה, מייבשים, תנורים, מקררים ומדיחים. עם מעל 140 ביקורות של 5 כוכבים, אני מבטיח לכם שירות מהיר, מקצועי ואמין אצלכם בבית.</p>
-        .btn-orange { background: var(--primary-orange); color: white; padding: 12px 30px; font-weight: 700; border-radius: 4px; display: inline-block; }
+.hero-text h1 { 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    color: var(--dark-text); /* שינינו לשחור */
+    line-height: 1.1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.8); /* הוספנו הילה לבנה */
+}        
+.hero-text p { 
+    font-size: 1.3rem; 
+    margin-bottom: 25px; 
+    color: var(--dark-text); /* שינינו לשחור */
+    font-weight: 700; /* עשינו את הפונט עבה יותר */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.8); /* הוספנו הילה לבנה */
+}        .btn-orange { background: var(--primary-orange); color: white; padding: 12px 30px; font-weight: 700; border-radius: 4px; display: inline-block; }
         .btn-orange:hover { background: #e69500; }
         
         .hero-reviews-wrapper { width: 350px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 4px solid var(--primary-orange); }
@@ -246,43 +256,50 @@
     .divider-bar { padding: 30px 0; }
 }
 /* עיצוב חדש ונקי לשורת השירותים למעלה */
+/* עיצוב חדש וממורכז לשורת השירותים */
+/* עיצוב חדש, ממורכז וגדול לשורת השירותים */
 .header-services-box {
-    text-align: right;
-    border-right: 4px solid var(--primary-orange); /* פס כתום עבה בצד */
-    padding-right: 20px;
+    text-align: center;
+    flex-grow: 1;
+    padding: 15px 0;
 }
 
 .services-title {
-    font-weight: 900 !important; /* הדגשה חזקה */
+    font-weight: 900 !important;
     color: #222 !important;
-    font-size: 1.2rem !important;
-    margin-bottom: 8px;
+    font-size: 1.8rem !important; /* הגדלנו מ-1.3 ל-1.8 */
+    margin-bottom: 15px;
+    display: block;
 }
 
 .services-list-new {
     display: flex;
-    gap: 15px;
+    gap: 25px; /* הגדלנו מעט את המרווח בין המילים */
     align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap; 
 }
 
 .service-item-new {
-    font-size: 0.95rem;
-    color: #444;
+    font-size: 1.25rem; /* הגדלנו מ-1.0 ל-1.25 */
+    color: #333; /* צבע מעט כהה ובולט יותר */
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    font-weight: 700; /* עשינו את הפונט יותר עבה/מודגש */
 }
 
-/* קו מפריד דק בין המילים */
+/* נקודה מפרידה מעוצבת בין השירותים */
 .service-item-new:not(:last-child)::after {
-    content: "|";
-    margin-right: 15px;
-    color: #ddd;
+    content: "•";
+    margin-right: 25px;
+    color: var(--primary-orange);
+    font-weight: bold;
 }
 
 .service-item-new i {
-    color: var(--primary-orange); /* ה-V יהיה בכתום */
-    font-size: 0.8rem;
+    color: var(--primary-orange);
+    font-size: 1.1rem; /* הגדלנו גם את האייקונים קצת */
 }
     </style>
 </head>
@@ -305,7 +322,7 @@
             </div>
             
 <div class="header-services-box">
-    <div class="services-title">מומחים בתיקון מוצרי חשמל ביתיים</div>
+    <div class="services-title"> תיקון מוצרי חשמל ביתיים</div>
     <div class="services-list-new">
         <span class="service-item-new"><i class="fa-solid fa-check"></i> מכונות כביסה ומייבשים</span>
         <span class="service-item-new"><i class="fa-solid fa-check"></i> תנורי אפייה</span>
@@ -516,7 +533,10 @@
     <script>
         /* --- סקריפט ביקורות גוגל --- */
         const reviews = [
-            { name: "יוסי כהן", date: "לפני שבוע", text: "הזמנתי טכנאי למכונת כביסה, הגיע בזמן והיה מקצועי מאוד.", bg: "bg-1", letter: "י" },
+            { name: "ארז פינ", date: "לפני שבוע", text: "רוצים שקט נפשי, מישהו שאתם באמת יכולים לסמוך עליו, שירות אדיב, מחיר הוגן, זמינות בתווך קצר עד מידי?? תתקשרו לרביע!!!! איש .
+נחמד,מנומס ותמיד מחייך.
+כבר כמה פעמים בהם זכיתי לשירותיו ואמשיך להתקשר אליו בכל פעם שאצטרך.
+תודה רביע על מי שאתה", bg: "bg-1", letter: "י" },
             { name: "רונית גל", date: "לפני 3 שבועות", text: "תיקנו לי את התנור לפני החג. שירות מהיר, נקי ומסודר.", bg: "bg-4", letter: "ר" },
             { name: "אבי רקפון", date: "לפני 4 ימים", text: "המחיר היה הוגן והעבודה בוצעה במהירות. ממליץ בחום.", bg: "bg-1", letter: "א" },
             { name: "אורן שאול", date: "לפני יומיים", text: "הטכנאי הגיע בדיוק בזמן, פתר את הבעיה במייבש תוך 20 דקות. תענוג.", bg: "bg-3", letter: "א" },
