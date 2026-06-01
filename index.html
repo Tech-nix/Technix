@@ -303,6 +303,49 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.7);
         }
         .gold-btn-shiny i { color: #000 !important; font-size: 1.1rem; }
+        /* --- מספר טלפון בהדר (צד שמאל) --- */
+.header-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+}
+.phone-number {
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--primary-orange) !important;
+    text-shadow: 1px 1px 0px #222, 2px 2px 5px rgba(0,0,0,0.1);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+.phone-number:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .phone-number { font-size: 1.8rem; margin-top: 15px; }
+}
+/* --- תיקון צפיפות בחלק העליון --- */
+.header-content {
+    gap: 15px; /* נותן רווח נשימה בין הלוגו, השירותים והטלפון */
+}
+
+.services-list-new {
+    gap: 10px !important; /* מקטין את הרווח בין השירותים */
+}
+
+.service-item-new {
+    font-size: 1.1rem !important; /* מקטין טיפ-טיפה את הכתב כדי שיכנס בשורה אחת */
+}
+
+.service-item-new:not(:last-child)::after {
+    margin-right: 10px !important; /* מקרב את הנקודות המפרידות */
+}
+
+.phone-number {
+    font-size: 1.9rem !important; /* התאמת גודל הטלפון לפרופורציה החדשה */
+}
     </style>
 </head>
 <body>
@@ -325,11 +368,19 @@
             <div class="header-services-box">
                 <div class="services-title">מומחים בתיקון מוצרי חשמל ביתיים</div>
                 <div class="services-list-new">
-                    <span class="service-item-new"><i class="fa-solid fa-check"></i> מכונת כביסה </span>
-                    <span class="service-item-new"><i class="fa-solid fa-check"></i> תנור אפייה</span>
-                    <span class="service-item-new"><i class="fa-solid fa-check"></i> מדיח כלים</span>
-                    <span class="service-item-new"><i class="fa-solid fa-check"></i> מייבש כביסה</span>
+                    <span class="service-item-new"></i> מכונת כביסה </span>
+                    <span class="service-item-new"></i> תנור אפייה</span>
+                    <span class="service-item-new"></i> מדיח כלים</span>
+                    <span class="service-item-new"></i> מייבש כביסה</span>
                 </div>
+            </div>
+       
+    <!-- צד שמאל: טלפון -->
+            <div class="header-phone">
+                <a href="tel:0549448001" class="phone-number" style="display: flex; flex-direction: column; align-items: center; line-height: 1.1;">
+                    <span style="font-size: 2.1rem;">רביע:</span>
+                    <span dir="ltr" style="font-size: 2.2rem;">054-9448001</span>
+                </a>
             </div>
         </div>
     </header>
@@ -338,7 +389,7 @@
         <div class="container hero-layout">
             <div class="hero-text">
                 <h1>טכנאי מכונות כביסה, מייבשים ותנורי אפייה בחיפה</h1>
-                <p>נעים מאוד, אני <strong>רביע</strong>, טכנאי ראשי בטכניקס. מומחה לתיקון כל מוצרי החשמל הביתיים. שירות מהיר, מקצועי ואמין אצלכם בבית.</p>
+                <p>נעים מאוד, אני <strong>רביע</strong>, טכנאי מוצרי חשמל ביתיים. שירות מהיר, מקצועי ואמין אצלכם בבית.</p>
                 <a href="https://wa.me/972549448001" class="btn-orange">הזמן שירות בקליק</a>
             </div>
 
