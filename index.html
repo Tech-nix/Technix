@@ -626,35 +626,30 @@
             });
         });
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // מחפש את כל השאלות באתר
-        const faqs = document.querySelectorAll('.faq-question, .accordion-header, .faq-item h3');
-        
-        faqs.forEach(faq => {
-            faq.addEventListener('click', function() {
-                // סוגר את כל התשובות האחרות הפתוחות (אופציונלי, למראה נקי יותר)
-                faqs.forEach(otherFaq => {
-                    if (otherFaq !== faq) {
-                        otherFaq.classList.remove('active');
-                        let otherAnswer = otherFaq.nextElementSibling;
-                        if(otherAnswer) {
-                            otherAnswer.style.display = 'none';
-                        }
+    /* --- סקריפט לשאלות ותשובות (FAQ) --- */
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    // סגור את כל השאר
+                    const currentlyActive = document.querySelector('.faq-question.active');
+                    if(currentlyActive && currentlyActive !== question) {
+                        currentlyActive.classList.remove('active');
+                        currentlyActive.nextElementSibling.style.maxHeight = null;
+                    }
+
+                    // פתח/סגור את הנוכחי
+                    question.classList.toggle('active');
+                    const answer = question.nextElementSibling;
+                    if(question.classList.contains('active')){
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
                     }
                 });
-
-                // פותח או סוגר את התשובה שלחצנו עליה
-                this.classList.toggle('active');
-                let answer = this.nextElementSibling;
-                
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                } else {
-                    answer.style.display = 'block';
-                }
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
