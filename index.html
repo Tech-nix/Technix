@@ -626,5 +626,36 @@
             });
         });
     </script>
+                <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // מחפש את כל השאלות באתר
+        const faqs = document.querySelectorAll('.faq-question, .accordion-header, .faq-item h3');
+        
+        faqs.forEach(faq => {
+            faq.addEventListener('click', function() {
+                // סוגר את כל התשובות האחרות הפתוחות (אופציונלי, למראה נקי יותר)
+                faqs.forEach(otherFaq => {
+                    if (otherFaq !== faq) {
+                        otherFaq.classList.remove('active');
+                        let otherAnswer = otherFaq.nextElementSibling;
+                        if(otherAnswer) {
+                            otherAnswer.style.display = 'none';
+                        }
+                    }
+                });
+
+                // פותח או סוגר את התשובה שלחצנו עליה
+                this.classList.toggle('active');
+                let answer = this.nextElementSibling;
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
