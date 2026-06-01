@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technix - שירות רשמי למוצרי חשמל</title>
+    <title>טכניקס - טכנאי מכונות כביסה, מייבשים ותנורי אפייה בחיפה | רביע</title>
+    <meta name="description" content="רביע מטכניקס (Technix) - טכנאי מומחה למכונות כביסה, מייבשים, תנורי אפייה, מקררים ומדיחים בחיפה והסביבה. שירות אמין עם מאות המלצות. הזמינו טכנאי עכשיו!">
+    <link rel="icon" type="image/png" href="logo.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Noto+Sans+Hebrew:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -130,16 +132,30 @@
         /* --- עיצוב Header ותגיות שירות --- */
         .top-bar { background-color: #f8f8f8; border-bottom: 1px solid var(--border-color); font-size: 0.85rem; padding: 8px 0; color: #666; }
         .top-links a:hover { color: var(--primary-orange); }
-        .main-header { padding: 15px 0; border-bottom: 1px solid var(--border-color); }
-        .logo-img { height: 120px; width: auto; display: block; }
         
-        .header-services-box { text-align: right; }
-        .services-title { font-weight: 700; color: #333; margin-bottom: 8px; font-size: 1.05rem; }
-        .services-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .service-tag { background: #fff; border: 1px solid var(--primary-orange); color: var(--dark-text); padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: 0.3s; cursor: default; }
-        .service-tag i { color: var(--primary-orange); margin-left: 5px; transition: 0.3s; }
-        .service-tag:hover { background: var(--primary-orange); color: white; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(255,165,0,0.2); }
-        .service-tag:hover i { color: white; }
+        .main-header { background-color: #ffffff !important; padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+        
+        /* לוגו טקסט נוצץ - טכניקס */
+        /* לוגו טקסט חדש - מודרני, נקי ובולט בענק */
+.text-logo {
+    font-family: 'Heebo', sans-serif;
+    font-size: 4.5rem !important; /* הגדלנו משמעותית את הגודל */
+    font-weight: 900;
+    color: var(--primary-orange);
+    text-shadow: 2px 2px 0px #222, 4px 4px 10px rgba(0,0,0,0.15); 
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1;
+    display: inline-block;
+}
+
+        /* עיצוב חדש, ממורכז וגדול לשורת השירותים */
+        .header-services-box { text-align: center; flex-grow: 1; padding: 15px 0; }
+        .services-title { font-weight: 900 !important; color: #222 !important; font-size: 1.8rem !important; margin-bottom: 15px; display: block; }
+        .services-list-new { display: flex; gap: 25px; align-items: center; justify-content: center; flex-wrap: wrap; }
+        .service-item-new { font-size: 1.25rem; color: #333; display: flex; align-items: center; gap: 8px; font-weight: 700; }
+        .service-item-new:not(:last-child)::after { content: "•"; margin-right: 25px; color: var(--primary-orange); font-weight: bold; }
+        .service-item-new i { color: var(--primary-orange); font-size: 1.1rem; }
 
         .header-icons .icon-link { display: flex; flex-direction: column; align-items: center; font-size: 0.8rem; position: relative; }
         .header-icons i { font-size: 1.5rem; margin-bottom: 3px; }
@@ -152,54 +168,45 @@
         .main-nav a:hover, .main-nav a.active { color: var(--primary-orange); }
         .main-nav a.active::after { content: ''; position: absolute; bottom: -3px; right: 0; width: 100%; height: 3px; background: var(--primary-orange); }
         
-        .hero-banner { background: url('my-new-banner.png') center/cover no-repeat; padding: 60px 0; position: relative; min-height: 450px; display: flex; align-items: center; }
-        .hero-banner::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%); z-index: 1; }        .hero-layout { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; width: 100%; }
-        .hero-text { max-width: 500px; padding-top: 60px; margin-right: 0; text-align: right; }
-.hero-text h1 { 
-    font-size: 3rem; 
-    margin-bottom: 10px; 
-    color: var(--dark-text); /* שינינו לשחור */
-    line-height: 1.1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.8); /* הוספנו הילה לבנה */
-}        
-.hero-text p { 
-    font-size: 1.3rem; 
-    margin-bottom: 25px; 
-    color: var(--dark-text); /* שינינו לשחור */
-    font-weight: 700; /* עשינו את הפונט עבה יותר */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.8); /* הוספנו הילה לבנה */
-}
-/* כפתור הזמנת שירות ממורכז, נוצץ וזז */
-.btn-orange {
-    background: linear-gradient(45deg, #FF8C00, #FFA500, #FFDF00, #FF8C00);
-    background-size: 300% 300%;
-    color: #000;
-    padding: 12px 35px;
-    font-weight: 900;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    display: block; /* מאפשר את המירכוז */
-    width: fit-content;
-    margin: 20px auto 0 auto; /* ממרכז אותו בדיוק באמצע מתחת לפסקה */
-    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.6);
-    animation: btnPulseShiny 2s infinite;
-    border: 2px solid #fff;
-    text-decoration: none;
-}
-
-@keyframes btnPulseShiny {
-    0% { background-position: 0% 50%; transform: scale(1); }
-    50% { background-position: 100% 50%; transform: scale(1.05); } /* תזוזה קטנה החוצה */
-    100% { background-position: 0% 50%; transform: scale(1); }
-}
-
-.btn-orange:hover {
-    animation: none; /* עוצר את התזוזה הקבועה כששמים עליו עכבר */
-    transform: scale(1.1); /* מגדיל אותו עוד קצת בלחיצה */
-    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.8);
-}
+        .hero-banner { background: url('my-new-banner.png') center/cover no-repeat; padding-top: 15px !important; padding-bottom: 60px; position: relative; min-height: 450px; display: flex; align-items: center; }
+        .hero-banner::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%); z-index: 1; }        
+        .hero-layout { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; width: 100%; }
+        .hero-text { max-width: 500px; margin-right: 0; text-align: right; }
         
-        .hero-reviews-wrapper { width: 350px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 4px solid var(--primary-orange); }
+        .hero-text h1 { font-size: 2.5rem !important; color: #ffffff !important; text-shadow: 2px 2px 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8) !important; line-height: 1.2 !important; margin-bottom: 15px; }
+        .hero-text p { font-size: 1.3rem !important; color: #ffffff !important; text-shadow: 1px 1px 8px rgba(0,0,0,1) !important; font-weight: 600 !important; margin-bottom: 25px; }
+        
+        /* כפתור הזמנת שירות ממורכז, נוצץ וזז */
+        .btn-orange {
+            background: linear-gradient(45deg, #FF8C00, #FFA500, #FFDF00, #FF8C00);
+            background-size: 300% 300%;
+            color: #000;
+            padding: 12px 35px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0 auto;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.6);
+            animation: btnPulseShiny 2s infinite;
+            border: 2px solid #fff;
+            text-decoration: none;
+        }
+
+        @keyframes btnPulseShiny {
+            0% { background-position: 0% 50%; transform: scale(1); }
+            50% { background-position: 100% 50%; transform: scale(1.05); } 
+            100% { background-position: 0% 50%; transform: scale(1); }
+        }
+
+        .btn-orange:hover {
+            animation: none; 
+            transform: scale(1.1); 
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.8);
+        }
+        
+        .hero-reviews-wrapper { width: 350px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 4px solid var(--primary-orange); margin-top: 20px; }
         .hero-reviews-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .hero-reviews-header h3 { font-size: 1rem; margin: 0; }
         .hero-reviews-header .stars { color: #FFD700; font-size: 0.9rem; }
@@ -215,20 +222,6 @@
         .service-box i { font-size: 2.5rem; color: var(--primary-orange); margin-bottom: 15px; }
         .service-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; }
         
-        .products-section { padding: 60px 0; }
-        .section-title { font-size: 1.8rem; margin-bottom: 30px; font-weight: 700; position: relative; display: inline-block; }
-        .orange-line { position: absolute; bottom: -10px; right: 0; width: 60px; height: 4px; background: var(--primary-orange); }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; position: relative; transition: 0.3s; }
-        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .sale-badge { position: absolute; top: 10px; left: 10px; background: var(--primary-orange); color: white; padding: 3px 8px; font-size: 0.8rem; font-weight: bold; }
-        .img-placeholder { height: 150px; background: #f4f4f4; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-size: 3rem; color: #ccc; }
-        .product-card h3 { font-size: 1rem; margin-bottom: 10px; color: #333; height: 40px; }
-        .price { font-size: 1.2rem; font-weight: 700; color: var(--dark-text); margin-bottom: 15px; }
-        .new-price { color: var(--primary-orange); }
-        .add-to-cart { width: 100%; padding: 10px; background: white; border: 1px solid var(--primary-orange); color: var(--primary-orange); font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .add-to-cart:hover { background: var(--primary-orange); color: white; }
-        
         footer { background: #333; color: #aaa; padding: 20px 0; text-align: center; font-size: 0.9rem; margin-top: 50px; }
 
         @media (max-width: 768px) {
@@ -236,99 +229,80 @@
             .hero-text { margin-bottom: 30px; padding-right: 0; }
             .hero-reviews-wrapper { width: 100%; max-width: 350px; }
             .header-content { flex-direction: column; gap: 15px; }
-            .logo-img { height: 120px; margin: 0 auto; }
+            .logo { margin: 0 auto; }
+            .text-logo { font-size: 2.2rem; }
             .main-nav { display: none; }
-            
-            /* התאמה של תגיות השירות למסך קטן */
-            .header-services-box { text-align: center; margin-top: 5px; }
-            .services-tags { justify-content: center; }
         }
+
         /* --- סרגל מפריד מעוצב עם לוגו מואר TECHNIX --- */
-.divider-bar {
-    background-color: #1f1f1f; /* צבע כהה יוקרתי */
-    padding: 50px 0;
-    text-align: center;
-    border-top: 3px solid var(--primary-orange);
-    border-bottom: 3px solid var(--primary-orange);
-    margin: 40px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .divider-bar {
+            background-color: #1f1f1f; 
+            padding: 50px 0;
+            text-align: center;
+            border-top: 3px solid var(--primary-orange);
+            border-bottom: 3px solid var(--primary-orange);
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.led-logo {
-    font-family: 'Heebo', sans-serif;
-    font-size: 4rem; 
-    font-weight: 900;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    text-shadow: 
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px var(--primary-orange),
-        0 0 82px var(--primary-orange),
-        0 0 92px var(--primary-orange),
-        0 0 102px var(--primary-orange);
-    animation: pulsate 1.5s infinite alternate;
-}
+        .led-logo {
+            font-family: 'Heebo', sans-serif;
+            font-size: 4rem; 
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px var(--primary-orange),
+                0 0 82px var(--primary-orange),
+                0 0 92px var(--primary-orange),
+                0 0 102px var(--primary-orange);
+            animation: pulsate 1.5s infinite alternate;
+        }
 
-@keyframes pulsate {
-    100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 40px var(--primary-orange), 0 0 100px var(--primary-orange); }
-    0% { text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 10px var(--primary-orange), 0 0 70px var(--primary-orange); }
-}
+        @keyframes pulsate {
+            100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 40px var(--primary-orange), 0 0 100px var(--primary-orange); }
+            0% { text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 10px var(--primary-orange), 0 0 70px var(--primary-orange); }
+        }
 
-@media (max-width: 768px) {
-    .led-logo { font-size: 2.5rem; letter-spacing: 4px; }
-    .divider-bar { padding: 30px 0; }
-}
-/* עיצוב חדש ונקי לשורת השירותים למעלה */
-/* עיצוב חדש וממורכז לשורת השירותים */
-/* עיצוב חדש, ממורכז וגדול לשורת השירותים */
-.header-services-box {
-    text-align: center;
-    flex-grow: 1;
-    padding: 15px 0;
-}
+        @media (max-width: 768px) {
+            .led-logo { font-size: 2.5rem; letter-spacing: 4px; }
+            .divider-bar { padding: 30px 0; }
+        }
 
-.services-title {
-    font-weight: 900 !important;
-    color: #222 !important;
-    font-size: 1.8rem !important; /* הגדלנו מ-1.3 ל-1.8 */
-    margin-bottom: 15px;
-    display: block;
-}
-
-.services-list-new {
-    display: flex;
-    gap: 25px; /* הגדלנו מעט את המרווח בין המילים */
-    align-items: center;
-    justify-content: center; 
-    flex-wrap: wrap; 
-}
-
-.service-item-new {
-    font-size: 1.25rem; /* הגדלנו מ-1.0 ל-1.25 */
-    color: #333; /* צבע מעט כהה ובולט יותר */
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 700; /* עשינו את הפונט יותר עבה/מודגש */
-}
-
-/* נקודה מפרידה מעוצבת בין השירותים */
-.service-item-new:not(:last-child)::after {
-    content: "•";
-    margin-right: 25px;
-    color: var(--primary-orange);
-    font-weight: bold;
-}
-
-.service-item-new i {
-    color: var(--primary-orange);
-    font-size: 1.1rem; /* הגדלנו גם את האייקונים קצת */
-}
+        .gold-btn-shiny {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #FFDF00, #D4AF37, #996515, #FFDF00);
+            background-size: 300% 300%;
+            color: #000 !important;
+            padding: 8px 18px;
+            border: 2px solid #B8860B;
+            border-radius: 50px;
+            font-weight: 900;
+            text-decoration: none;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            animation: goldGlimmer 3s ease infinite;
+            transition: 0.3s;
+        }
+        @keyframes goldGlimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gold-btn-shiny:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.7);
+        }
+        .gold-btn-shiny i { color: #000 !important; font-size: 1.1rem; }
     </style>
 </head>
 <body>
@@ -342,28 +316,29 @@
         </a>
     </div>
 
-    <!-- כאן החלפנו את הלוגו והוספנו את התגיות -->
     <header class="main-header">
         <div class="container flex-between header-content">
             <div class="logo">
-                <img src="logo.png" alt="Technix לוגו" class="logo-img">
+                <div class="text-logo">טכניקס</div>
             </div>
             
-<div class="header-services-box">
-    <div class="services-title"> תיקון מוצרי חשמל ביתיים</div>
-    <div class="services-list-new">
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> מכונות כביסה ומייבשים</span>
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> תנורי אפייה</span>
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> מדיחי כלים</span>
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> מקררים</span>
-    </div>
-</div>
+            <div class="header-services-box">
+                <div class="services-title">מומחים בתיקון מוצרי חשמל ביתיים</div>
+                <div class="services-list-new">
+                    <span class="service-item-new"><i class="fa-solid fa-check"></i> מכונות כביסה ומייבשים</span>
+                    <span class="service-item-new"><i class="fa-solid fa-check"></i> תנורי אפייה</span>
+                    <span class="service-item-new"><i class="fa-solid fa-check"></i> מדיחי כלים</span>
+                    <span class="service-item-new"><i class="fa-solid fa-check"></i> מקררים</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <section class="hero-banner">
         <div class="container hero-layout">
             <div class="hero-text">
-                <p>מעל 5 שנות ניסיון. תיקון מקצועי לכל סוגי התקלות בבית הלקוח. שירות מהיר, מקצועי, ואמין.</p>
+                <h1>טכנאי מכונות כביסה, מייבשים ותנורי אפייה בחיפה</h1>
+                <p>נעים מאוד, אני <strong>רביע</strong>, טכנאי ראשי בטכניקס. מומחה לתיקון כל מוצרי החשמל הביתיים. שירות מהיר, מקצועי ואמין אצלכם בבית.</p>
                 <a href="https://wa.me/972549448001" class="btn-orange">הזמן שירות בקליק</a>
             </div>
 
@@ -373,42 +348,13 @@
                     <div class="stars">⭐⭐⭐⭐⭐ 5.0</div>
                 </div>
                 <div id="reviews-container"></div>
-<style>
-.gold-btn-shiny {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: linear-gradient(45deg, #FFDF00, #D4AF37, #996515, #FFDF00);
-    background-size: 300% 300%;
-    color: #000 !important;
-    padding: 8px 18px;
-    border: 2px solid #B8860B;
-    border-radius: 50px;
-    font-weight: 900;
-    text-decoration: none;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-    animation: goldGlimmer 3s ease infinite;
-    transition: 0.3s;
-}
-@keyframes goldGlimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-.gold-btn-shiny:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.7);
-}
-.gold-btn-shiny i { color: #000 !important; font-size: 1.1rem; }
-</style>
-
-<div style="text-align: center; margin-top: 15px;">
-    <a href="https://www.google.com/search?sca_esv=50cbc9812fabc9fd&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYlq6vraxZv1uDbEM2aZiamKBhbOGyoDgRD4eSmILPnwOhBUE5IzFLhfVIVzpaMFKhgdUWMIUI11VA7MKUYaEX-2gzLdm0icN1nqzAXJJ__qmtUk4u28leZm2oYp0UcqyIaLblUmD0R_l0WRw0qj57dwyXP4MSizawktCvwLhmbX4gvFrsjoQgF2bDzkqkG6-DAHu2ncHDzeHwn9Mrkfytf5VOR5vN5mWQq9Ecmo6jOWDRVLvI9KkO_f7a0a3Abh6_gtI2bdTCoR9uVOGWYxtCoO7Yq4&q=%D7%98%D7%9B%D7%A0%D7%99%D7%A7%D7%A1+%E2%80%93+%D7%98%D7%9B%D7%A0%D7%90%D7%99+%D7%9E%D7%9B%D7%95%D7%A0%D7%95%D7%AA+%D7%9B%D7%91%D7%99%D7%A1%D7%94,+%D7%9E%D7%99%D7%99%D7%91%D7%A9%D7%99%D7%9D,+%D7%AA%D7%A0%D7%95%D7%A8%D7%99+%D7%90%D7%A4%D7%99%D7%99%D7%94,+%D7%9E%D7%93%D7%99%D7%97%D7%99%D7%9D,+%D7%9E%D7%A7%D7%A8%D7%A8%D7%99%D7%9D+%D7%91%D7%97%D7%99%D7%A4%D7%94+%D7%95%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94.+%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%95%D7%AA&sa=X&ved=2ahUKEwiXuKSx8diUAxXoQEEAHXGyL44Q0bkNegQIOxAH&biw=1536&bih=695&dpr=1.25" target="_blank" class="gold-btn-shiny">
-        <i class="fa-brands fa-google"></i> לכל הביקורות בגוגל
-    </a>
-</div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="https://g.page/r/CZ1QPQzkjQl-EBM" target="_blank" class="gold-btn-shiny">
+                        <i class="fa-brands fa-google"></i> לכל הביקורות בגוגל
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="brands-section">
@@ -431,8 +377,8 @@
     </section>
     
     <div class="divider-bar">
-    <div class="led-logo">TECHNIX</div>
-</div>
+        <div class="led-logo">TECHNIX</div>
+    </div>
 
     <section class="faq-section">
         <div class="container">
@@ -543,10 +489,9 @@
         </div>
     </section>
 
-    <!-- הפוטר עם הקישורים המשפטיים -->
     <footer>
         <div class="container">
-            <p>© 2025 Technix - כל הזכויות שמורות.</p>
+            <p>© 2026 Technix - כל הזכויות שמורות.</p>
             
             <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                 <a href="accessibility.html" style="color: #aaa; text-decoration: underline;">הצהרת נגישות</a>
@@ -606,7 +551,6 @@
 
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
-                    // סגור את כל השאר
                     const currentlyActive = document.querySelector('.faq-question.active');
                     if(currentlyActive && currentlyActive !== question) {
                         currentlyActive.classList.remove('active');
@@ -615,7 +559,6 @@
                         }
                     }
 
-                    // פתח/סגור את הנוכחי
                     question.classList.toggle('active');
                     const answer = question.nextElementSibling;
                     if(answer) {
@@ -629,3 +572,5 @@
             });
         });
     </script>
+</body>
+</html>
