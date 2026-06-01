@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technix - טכנאי מכונות כביסה, מייבים, תנורי אפייה, מדיחים, מקררים</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <title>Technix - שירות רשמי למוצרי חשמל</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -351,12 +350,12 @@
             </div>
             
 <div class="header-services-box">
-    <div class="services-title"> תיקון מוצרי חשמל ביתיים בחיפה והסביבה</div>
+    <div class="services-title"> תיקון מוצרי חשמל ביתיים</div>
     <div class="services-list-new">
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> מכונת כביסה </span>
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> תנור אפייה</span>
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> מדיח כלים</span>
-        <span class="service-item-new"><i class="fa-solid fa-check"></i> מייבש כביסה</span>
+        <span class="service-item-new"><i class="fa-solid fa-check"></i> מכונות כביסה ומייבשים</span>
+        <span class="service-item-new"><i class="fa-solid fa-check"></i> תנורי אפייה</span>
+        <span class="service-item-new"><i class="fa-solid fa-check"></i> מדיחי כלים</span>
+        <span class="service-item-new"><i class="fa-solid fa-check"></i> מקררים</span>
     </div>
 </div>
     </header>
@@ -561,10 +560,7 @@
     <script>
         /* --- סקריפט ביקורות גוגל --- */
         const reviews = [
-            { name: "ארז פינ", date: "לפני שבוע", text: "רוצים שקט נפשי, מישהו שאתם באמת יכולים לסמוך עליו, שירות אדיב, מחיר הוגן, זמינות בתווך קצר עד מידי?? תתקשרו לרביע!!!! איש .
-נחמד,מנומס ותמיד מחייך.
-כבר כמה פעמים בהם זכיתי לשירותיו ואמשיך להתקשר אליו בכל פעם שאצטרך.
-תודה רביע על מי שאתה", bg: "bg-1", letter: "י" },
+            { name: "ארז פינ", date: "לפני שבוע", text: "רוצים שקט נפשי, מישהו שאתם באמת יכולים לסמוך עליו, שירות אדיב, מחיר הוגן, זמינות בתווך קצר עד מידי?? תתקשרו לרביע!!!! איש נחמד, מנומס ותמיד מחייך. כבר כמה פעמים בהם זכיתי לשירותיו ואמשיך להתקשר אליו בכל פעם שאצטרך. תודה רביע על מי שאתה", bg: "bg-1", letter: "י" },
             { name: "רונית גל", date: "לפני 3 שבועות", text: "תיקנו לי את התנור לפני החג. שירות מהיר, נקי ומסודר.", bg: "bg-4", letter: "ר" },
             { name: "אבי רקפון", date: "לפני 4 ימים", text: "המחיר היה הוגן והעבודה בוצעה במהירות. ממליץ בחום.", bg: "bg-1", letter: "א" },
             { name: "אורן שאול", date: "לפני יומיים", text: "הטכנאי הגיע בדיוק בזמן, פתר את הבעיה במייבש תוך 20 דקות. תענוג.", bg: "bg-3", letter: "א" },
@@ -584,6 +580,7 @@
         const container = document.getElementById('reviews-container');
 
         function showReview() {
+            if(!container) return;
             const review = reviews[currentReviewIndex];
             container.innerHTML = `
                 <div class="review-slide active">
@@ -604,29 +601,6 @@
         setInterval(showReview, 4000);
 
         /* --- סקריפט לשאלות ותשובות (FAQ) --- */
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                // סגור את כל השאר
-                const currentlyActive = document.querySelector('.faq-question.active');
-                if(currentlyActive && currentlyActive !== question) {
-                    currentlyActive.classList.remove('active');
-                    currentlyActive.nextElementSibling.style.maxHeight = null;
-                }
-
-                // פתח/סגור את הנוכחי
-                question.classList.toggle('active');
-                const answer = question.nextElementSibling;
-                if(question.classList.contains('active')){
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                } else {
-                    answer.style.maxHeight = null;
-                }
-            });
-        });
-<script>
-    /* --- סקריפט לשאלות ותשובות (FAQ) --- */
         document.addEventListener('DOMContentLoaded', function() {
             const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -636,20 +610,22 @@
                     const currentlyActive = document.querySelector('.faq-question.active');
                     if(currentlyActive && currentlyActive !== question) {
                         currentlyActive.classList.remove('active');
-                        currentlyActive.nextElementSibling.style.maxHeight = null;
+                        if(currentlyActive.nextElementSibling) {
+                            currentlyActive.nextElementSibling.style.maxHeight = null;
+                        }
                     }
 
                     // פתח/סגור את הנוכחי
                     question.classList.toggle('active');
                     const answer = question.nextElementSibling;
-                    if(question.classList.contains('active')){
-                        answer.style.maxHeight = answer.scrollHeight + "px";
-                    } else {
-                        answer.style.maxHeight = null;
+                    if(answer) {
+                        if(question.classList.contains('active')){
+                            answer.style.maxHeight = answer.scrollHeight + "px";
+                        } else {
+                            answer.style.maxHeight = null;
+                        }
                     }
                 });
             });
         });
     </script>
-</body>
-</html>
