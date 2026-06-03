@@ -346,6 +346,71 @@
 .phone-number {
     font-size: 1.9rem !important; /* התאמת גודל הטלפון לפרופורציה החדשה */
 }
+/* --- אזור טיפים ומאמרים --- */
+.blog-section { padding: 80px 0; background-color: #f9f9f9; border-top: 1px solid #eee; }
+.blog-header { text-align: center; margin-bottom: 50px; }
+.blog-header h2 { font-size: 2.5rem; font-weight: 900; color: #222; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; transition: all 0.3s ease; display: flex; flex-direction: column; }
+/* הנה הקוד החדש שהוספת: */
+.blog-image { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #eee; transition: opacity 0.3s ease; }
+.blog-card:hover .blog-image { opacity: 0.9; }
+
+.blog-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+.blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: var(--primary-orange); }
+.blog-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+.blog-title { font-size: 1.4rem; font-weight: 700; color: #333; margin-bottom: 15px; line-height: 1.3; }
+.blog-excerpt { color: #666; font-size: 1rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+.read-more { color: var(--primary-orange); font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: 0.3s; width: fit-content; }
+.read-more:hover { color: #d68a00; gap: 12px; }
+.read-more i { font-size: 1.1rem; }
+/* --- תפריט ניווט ראשי --- */
+.main-nav {
+    background-color: #333; /* רקע כהה שנותן קונטרסט מעולה */
+    border-bottom: 3px solid var(--primary-orange);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    display: block;
+    padding: 15px 25px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: var(--primary-orange);
+    color: #000;
+}
+
+/* התאמה לנייד */
+@media (max-width: 768px) {
+    .nav-links { gap: 10px; flex-wrap: wrap; padding: 10px 0; }
+    .nav-links a { padding: 10px 15px; font-size: 1rem; }
+}
+
+/* גלילה חלקה לאזורים באתר */
+html {
+    scroll-behavior: smooth;
+}
+/* עיצוב סמלי רשתות חברתיות בפוטר */
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
+        .social-links a { color: #aaa; font-size: 28px; transition: color 0.3s ease, transform 0.3s ease; }
+        .social-links a:hover { color: var(--primary-orange); transform: translateY(-3px); }
     </style>
 </head>
 <body>
@@ -384,12 +449,21 @@
             </div>
         </div>
     </header>
-
+    <!-- תפריט ניווט ראשי -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#" class="active">בית</a></li>
+                <li><a href="#tips">טיפים ומאמרים</a></li>
+                <li><a href="#faq">שאלות ותשובות</a></li>
+            </ul>
+        </div>
+    </nav>
     <section class="hero-banner">
         <div class="container hero-layout">
             <div class="hero-text">
-    <h1>תיקון מוצרי חשמל בחיפה והסביבה</h1>
-    <p>נעים מאוד, אני <strong>רביע</strong>. אני מאמין בשקיפות מלאה, מחירים הוגנים ותיקון יסודי שמחזיק לאורך זמן. שירות מהיר, מקצועי ואמין אצלכם בבית.</p>
+    <h1>טכנאי מוצרי חשמל ביתיים בחיפה והסביבה</h1>
+    <p>   <strong></strong>    מחירים הוגנים ותיקון יסודי שמחזיק לאורך זמן. שירות מהיר, מקצועי ואמין אצלכם בבית.</p>
     <a href="https://wa.me/972549448001" class="btn-orange">דברו איתי בוואטסאפ</a>
 </div>
 
@@ -430,8 +504,46 @@
     <div class="divider-bar">
         <div class="led-logo">TECHNIX</div>
     </div>
+<!-- אזור מאמרים וטיפים -->
+    <section class="blog-section" id="tips">
+        <div class="container">
+            <div class="blog-header">
+                <h2>טיפים מהשטח שמצילים מכשירים</h2>
+                <span class="orange-line" style="margin: 10px auto 0;"></span>
+            </div>
+            
+<div class="blog-grid">
+                
+                <a href="dryer-not-spinning.html" class="blog-card" style="text-decoration: none; color: inherit;">
+                    <img src="dryer.png" alt="מייבש כביסה לא מסתובב" class="blog-image">
+                    <div class="blog-content">
+                        <h3 class="blog-title">המייבש עושה רעש אבל לא מסתובב?</h3>
+                        <p class="blog-excerpt">המנוע מזמזם אבל התוף עומד במקום והכביסה נשארת רטובה? אלו 3 הסיבות המרכזיות לתקלה ואיך אפשר לזהות אותן...</p>
+                        <span class="read-more"><i class="fa-solid fa-arrow-left"></i> למדריך המלא</span>
+                    </div>
+                </a>
 
-    <section class="faq-section">
+                <a href="oven-baking-issues.html" class="blog-card" style="text-decoration: none; color: inherit;">
+                    <img src="oven.png" alt="התנור אופה לא אחיד או שורף מאפים" class="blog-image">
+                    <div class="blog-content">
+                        <h3 class="blog-title">התנור אופה לא אחיד או שורף מאפים?</h3>
+                        <p class="blog-excerpt">העוגה יוצאת שרופה מבחוץ ונוזלית מבפנים? לפני שאתם מאשימים את המתכון, כדאי שתכירו את 3 התקלות הנפוצות ביותר בתנורי אפייה...</p>
+                        <span class="read-more"><i class="fa-solid fa-arrow-left"></i> למדריך המלא</span>
+                    </div>
+                </a>
+
+                <a href="washing-machine.html" class="blog-card" style="text-decoration: none; color: inherit;">
+                    <img src="washing.png" alt="מכונת כביסה לא מנקזת מים" class="blog-image">
+                    <div class="blog-content">
+                        <h3 class="blog-title">מכונת הכביסה לא מנקזת מים?</h3>
+                        <p class="blog-excerpt">התוכנית הסתיימה אבל יש בריכה של מים בתוך התוף? לפני שאתם ממהרים להזמין טכנאי, יש 3 דברים שאתם חייבים לבדוק...</p>
+                        <span class="read-more"><i class="fa-solid fa-arrow-left"></i> למדריך המלא</span>
+                    </div>
+                </a>
+
+            </div>
+    </section>
+    <section class="faq-section" id="faq">
         <div class="container">
             <h2 class="section-title">שאלות ותשובות נפוצות <span class="orange-line"></span></h2>
             <div class="faq-container">
@@ -446,35 +558,6 @@
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>מכונת כביסה לא סוחטת, מה יכולה להיות הסיבה?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>אם מכונת הכביסה לא סוחטת ואתם מבחינים בכך שגם המים במכונה לא מתנקזים, רוב הסיכויים שיש סתימה בפילטר או בעיה במשאבה.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>מכונת כביסה לא עובדת, מה עושים לפני שמזמינים טכנאי?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>לפני שאתם ממהרים להזמין טכנאי, בדקו שלא מדובר בבעיה חשמלית (למשל, פיוז שרוף). כמו כן, ודאו שדלת המכונה סגורה היטב – לפעמים המכונה לא תתחיל לעבוד אם הדלת מעט פתוחה.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>מכונת כביסה לא מסתובבת, מה גורם לכך?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>שלושה גורמים עיקריים יכולים לגרום לכך: רצועה שנפלה או נקרעה (תיקון קל וזול יחסית), תקלה במנוע של מכונת הכביסה, או התקלה החמורה מכולן - בעיה בכרטיס האלקטרוני, שבמצב כזה כדאי לשקול אם בכלל משתלם לתקן עקב עלות הכרטיס היקרה.</p>
-                    </div>
-                </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
@@ -502,27 +585,18 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>אני משתדל להגיע עוד באותו היום או ביום למחרת לכל המאוחר. במקרים דחופים, אני נותן עדיפות עליונה.</p>
+                        <p>אנחנו משתדלים להגיע עוד באותו היום או ביום למחרת לכל המאוחר. </p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>למה מכונת הכביסה שלי מרעישה בזמן הסחיטה?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>רעש חזק בזמן סחיטה נובע לרוב ממיסבים שחוקים, בולמי זעזועים עייפים או חפץ זר שנתקע במשאבה או בתוף. מומלץ לא להמשיך להפעיל את המכונה במצב זה כדי למנוע נזק נוסף.</p>
-                    </div>
-                </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>באילו אזורים אתה נותן שירות?</span>
+                        <span>באילו אזורים נותנים שירות?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>אני מספק שירות בכל אזור חיפה והסביבה, כולל: נשר, טירת כרמל, הקריות (ביאליק, מוצקין, אתא, ים), עתלית ורכסים.</p>
+                        <p>אנו מספקים שירות בכל אזור חיפה והסביבה, כולל: נשר, טירת כרמל, הקריות (ביאליק, מוצקין, אתא, ים), עתלית ורכסים.</p>
                     </div>
                 </div>
 
@@ -540,16 +614,18 @@
         </div>
     </section>
 
-    <footer>
+<footer>
         <div class="container">
-            <p>© 2026 Technix - כל הזכויות שמורות.</p>
-            
-            <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="accessibility.html" style="color: #aaa; text-decoration: underline;">הצהרת נגישות</a>
-                <a href="privacy.html" style="color: #aaa; text-decoration: underline;">מדיניות פרטיות</a>
-                <a href="returns.html" style="color: #aaa; text-decoration: underline;">מדיניות ביטולים ואחריות</a>
-                <a href="terms.html" style="color: #aaa; text-decoration: underline;">תקנון האתר</a>
+            <div class="social-links">
+                <a href="https://facebook.com/שלך" target="_blank" aria-label="פייסבוק">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                
+                <a href="https://instagram.com/שלך" target="_blank" aria-label="אינסטגרם">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
+            <p>© 2026 Technix - כל הזכויות שמורות.</p>
         </div>
     </footer>
 
@@ -557,19 +633,14 @@
         /* --- סקריפט ביקורות גוגל --- */
         const reviews = [
             { name: "ארז פינ", date: "לפני שבוע", text: "רוצים שקט נפשי, מישהו שאתם באמת יכולים לסמוך עליו, שירות אדיב, מחיר הוגן, זמינות בתווך קצר עד מידי?? תתקשרו לרביע!!!! איש נחמד, מנומס ותמיד מחייך. כבר כמה פעמים בהם זכיתי לשירותיו ואמשיך להתקשר אליו בכל פעם שאצטרך. תודה רביע על מי שאתה", bg: "bg-1", letter: "י" },
-            { name: "רונית גל", date: "לפני 3 שבועות", text: "תיקנו לי את התנור לפני החג. שירות מהיר, נקי ומסודר.", bg: "bg-4", letter: "ר" },
-            { name: "אבי רקפון", date: "לפני 4 ימים", text: "המחיר היה הוגן והעבודה בוצעה במהירות. ממליץ בחום.", bg: "bg-1", letter: "א" },
-            { name: "אורן שאול", date: "לפני יומיים", text: "הטכנאי הגיע בדיוק בזמן, פתר את הבעיה במייבש תוך 20 דקות. תענוג.", bg: "bg-3", letter: "א" },
-            { name: "דורון לביא", date: "לפני חודש", text: "מחירים הוגנים מאוד לעומת המתחרים. ממליץ בחום.", bg: "bg-3", letter: "ד" },
-            { name: "רועי מזרחי", date: "לפני 3 שבועות", text: "תיקון מכונת כביסה בוש, עבודה נקייה ומסודרת.", bg: "bg-2", letter: "ר" },
-            { name: "חגית אברהם", date: "לפני חודשיים", text: "הטכנאי היה מאוד אדיב והסביר לי בדיוק מה הבעיה.", bg: "bg-3", letter: "ח" },
-            { name: "יניב סולומון", date: "לפני יום", text: "שירות אמין ומקצועי. לא ניסו לדחוף לי תיקונים מיותרים.", bg: "bg-4", letter: "י" },
-            { name: "קרן לוי", date: "לפני שבוע", text: "הזמנתי טכנאי לתנור אפייה, הגיע יום למחרת ותיקן מעולה.", bg: "bg-1", letter: "ק" },
-            { name: "סיגל בן דוד", date: "לפני חודש", text: "התקשרתי להתייעץ ועזרו לי לפתור את התקלה לבד בטלפון! אלופים.", bg: "bg-3", letter: "ס" },
-            { name: "ורד שגב", date: "לפני 3 ימים", text: "הטכנאי היה נחמד מאוד, נתן מחיר טוב והשאיר נקי אחריו.", bg: "bg-3", letter: "ו" },
-            { name: "תומר חן", date: "לפני שבוע", text: "שירות מהיר ויעיל. המייבש חזר לחיים.", bg: "bg-4", letter: "ת" },
-            { name: "מירי", date: "לפני 5 ימים", text: "ממליצה מאוד! יחס אישי ומחיר הוגן.", bg: "bg-1", letter: "מ" },
-            { name: "צביקה בן לולו", date: "לפני 3 ימים", text: "שירות 10/10. אין דברים כאלה היום.", bg: "bg-2", letter: "צ" }
+            { name: "Ori Salman", date: "לפני 3 שבועות", text: "החלפת גומייה במכונת כביסה. שירותי ומקצועי", bg: "bg-4", letter: "ר" },
+            { name: "עירן ירימי", date: "לפני 4 ימים", text: "מקצוען אמיתי . איתר את התקלה , קנה את החלקים והגיע לתקן . דוגמה למופת לכל איש מקצוע איך לתת שירות.", bg: "bg-1", letter: "א" },
+            { name: "eshel eisenberg", date: "לפני יומיים", text: "!מקצוען. נחמד מאוד וסבלןושירותי. מחיר הוגן", bg: "bg-3", letter: "א" },
+            { name: "Naama Brenner", date: "לפני חודש", text: "מצאנו את רביע באתר מידרג, אחרי שהמכונת הכביסה שלנו החלה להשמיע קולות חשודים. הוא היה זמין תוך יום, הגיע בדיוק בשעה שקבענו ובדק את המכונה. לאחר שמצא כי התוף שבור (או כמעט שבור), ובהינתן שהמכונה כבר ישנה, ייעץ לנו לא להחליף את כל מערכת התוף אלא לבחור באפשרות של רכישת מכונה חדשה. המחיר לביקור והבדיקה היה סביר בהחלט. אני ממליצה בחום על רביע, הוא נראה בעיני מקצועי ואמין וגם נחמד ואדיב.", bg: "bg-3", letter: "ד" },
+            { name: "צופיה רון", date: "לפני 3 שבועות", text: "רביע איש נעים ,מקצועי,מסודר,מסביר בדיוק את הבעיה ומה הפתרון הרצוי .ממליצה בחום", bg: "bg-2", letter: "ר" },
+            { name: "גל רון שטיין", date: "לפני חודשיים", text: "אמין אדיב איש טוב!! מומלץ בחום!! הזמנתי אותו בגלל תקלה במכונת כביסה", bg: "bg-3", letter: "ח" },
+            { name: "tomer gutterman", date: "לפני יום", text: "היה מצוין, תיאם הכל מראש כולל הצעת מחיר. הגיע בזמן וטיפל במהירות( תיקון מייבש כביסה ). מחיר הוגן ושירות נהדר", bg: "bg-4", letter: "י" },
+            { name: "Ari Freund", date: "לפני שבוע", text: "שירות מצוין של רביע למייבש כביסה", bg: "bg-1", letter: "ק" },
         ];
 
         let currentReviewIndex = 0;
