@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מייבש הכביסה לא מסתובב? | טכניקס בלוג</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Noto+Sans+Hebrew:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* הגדרות בסיס */
+        :root { --primary-orange: #FFA500; --dark-text: #000; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Heebo', sans-serif; background-color: #f4f4f4; color: var(--dark-text); direction: rtl; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* הדר ותפריט */
+        .main-header { background-color: #fff; padding: 15px 0; border-bottom: 1px solid #e0e0e0; }
+        .text-logo { font-family: 'Heebo', sans-serif; font-size: 3.2rem; font-weight: 900; color: var(--primary-orange); text-shadow: 2px 2px 0px #222, 4px 4px 10px rgba(0,0,0,0.1); margin: 0; line-height: 1; }
+        .header-services-box { text-align: center; flex-grow: 1; padding: 0 15px; }
+        .services-title { font-weight: 900; color: #222; font-size: 1.5rem; display: block; margin-bottom: 5px; }
+        .header-phone { padding-left: 15px; }
+        .phone-number { display: flex; flex-direction: column; align-items: center; line-height: 1.1; font-family: 'Heebo', sans-serif; font-weight: 900; color: var(--primary-orange); text-shadow: 1px 1px 0px #222; }
+        .main-nav { background-color: #333; border-bottom: 3px solid var(--primary-orange); }
+        .nav-links { display: flex; justify-content: center; gap: 30px; list-style: none; padding: 0; margin: 0; }
+        .nav-links a { display: block; padding: 15px 25px; color: #fff; font-size: 1.1rem; font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { background-color: var(--primary-orange); color: #000; }
+
+        /* עיצוב אזור המאמר */
+        .article-wrapper { max-width: 800px; margin: 50px auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .article-title { font-size: 2.5rem; font-weight: 900; color: #222; margin-bottom: 15px; line-height: 1.2; }
+        .article-meta { color: #888; font-size: 0.95rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .article-meta i { color: var(--primary-orange); }
+        .article-content { font-size: 1.15rem; line-height: 1.8; color: #444; }
+        .article-content h3 { font-size: 1.6rem; color: #222; margin: 30px 0 15px; font-weight: 800; }
+        .article-content p { margin-bottom: 20px; }
+        .article-content ul { margin-bottom: 20px; padding-right: 20px; }
+        .article-content li { margin-bottom: 10px; }
+        
+        /* אזור הנעה לפעולה */
+        .article-cta { background: #1f1f1f; color: #fff; text-align: center; padding: 30px; border-radius: 8px; margin-top: 40px; border-bottom: 4px solid var(--primary-orange); }
+        .article-cta h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .btn-orange { display: inline-block; background: var(--primary-orange); color: #000; font-weight: 900; padding: 12px 30px; border-radius: 50px; font-size: 1.2rem; margin-top: 15px; transition: 0.3s; }
+        .btn-orange:hover { transform: scale(1.05); }
+        
+        footer { background: #333; color: #aaa; padding: 20px 0; text-align: center; margin-top: 50px; }
+        
+        @media (max-width: 768px) {
+            .flex-between { flex-direction: column; gap: 15px; }
+            .article-wrapper { margin: 20px 15px; padding: 25px; }
+            .article-title { font-size: 1.8rem; }
+        }
+/* כפתורי יצירת קשר צפים - מותאם לעמוד הבית */
+        .contact-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .floating-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-orange);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            background: #fff;
+            transition: transform 0.3s;
+        }
+
+        .floating-profile:hover { transform: scale(1.05); }
+        .floating-profile img { width: 100%; height: 100%; object-fit: cover; }
+
+        .whatsapp-float {
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container flex-between header-content">
+            <div class="logo"><div class="text-logo">טכניקס</div></div>
+            <div class="header-services-box">
+                <span class="services-title">מומחים בתיקון מוצרי חשמל ביתיים</span>
+            </div>
+            <div class="header-phone">
+                <a href="tel:0549448001" class="phone-number">
+                    <span style="font-size: 1.2rem;">רביע:</span>
+                    <span dir="ltr" style="font-size: 1.8rem;">054-9448001</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">חזרה לעמוד הראשי</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="article-wrapper">
+            <h1 class="article-title">מפעילים את המייבש, יש רעש, אבל התוף לא מסתובב?</h1>
+            <div class="article-meta">
+                <span><i class="fa-solid fa-user-tie"></i> מאת: טכניקס</span> | 
+                <span><i class="fa-regular fa-clock"></i> זמן קריאה: 2 דקות</span>
+            </div>
+            
+            <div class="article-content">
+                <p>הכנסתם כביסה רטובה, לחצתם על הפעלה, המייבש עושה צליל זמזום של מנוע עובד - אבל התוף עומד במקום. זו אחת התקלות השכיחות ביותר במייבשי כביסה, ולרוב היא נובעת מבלאי טבעי של אחד החלקים המכניים. הנה הסיבות המרכזיות:</p>
+                
+                <h3>1. רצועה קרועה (הגורם הנפוץ ביותר)</h3>
+                <p>התוף של המייבש מסתובב בעזרת רצועת גומי ארוכה שמחוברת למנוע. עם השנים, החום והחיכוך גורמים לרצועה להתייבש ולהיקרע. ברגע שהרצועה נקרעת, המנוע יעבוד "על ריק" והתוף יישאר במקום.</p>
+                <ul>
+                    <li><strong>איך מזהים?</strong> נסו לסובב את התוף פנימה עם היד כשהמייבש כבוי. אם התוף מסתובב בקלות רבה מדי וללא שום התנגדות, כנראה שהרצועה קרועה.</li>
+                </ul>
+
+                <h3>2. קבל מנוע תקול</h3>
+                <p>הקבל הוא מעין סוללה שנותנת למנוע את ה"מכת חשמל" הראשונית כדי להתחיל להסתובב. אם הקבל נשרף או נחלש, תשמעו זמזום עמום מהמנוע שמנסה לפעול, אבל אין לו מספיק כוח לסובב את התוף הכבד.</p>
+
+                <h3>3. גלגלי תמיכה (רולים) שחוקים</h3>
+                <p>התוף של המייבש יושב על גלגלי תמיכה קטנים (רולים). כשהם נשחקים או נתקעים, נוצר חיכוך אדיר שמונע מהתוף להסתובב, או שגורם לרעשי חריקה נוראיים. במקרים קשים, הרצועה עלולה להיקרע כתוצאה מהחיכוך הזה.</p>
+
+                <h3>מה עושים עכשיו?</h3>
+                <p>בשונה מניקוי פילטר פשוט, תיקון מייבש שלא מסתובב דורש פירוק של מעטפת המייבש, שחרור התוף והחלפת חלקים פנימיים. מומלץ לא להמשיך להפעיל את המייבש במצב הזה כדי לא לגרום למנוע להתחמם ולהישרף.</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>המייבש הפסיק להסתובב? אל תחכו שיתקלקל יותר</h3>
+                <p>החלפת רצועה או קבל היא תיקון מהיר ומשתלם הרבה יותר מקניית מייבש חדש. מגיע אליכם בחיפה והסביבה.</p>
+                <a href="https://wa.me/972549448001" class="btn-orange"><i class="fa-brands fa-whatsapp"></i> שלחו לי הודעה עכשיו</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Technix - כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+<div class="contact-widget">
+        <div class="floating-profile">
+            <img src="my-face.png" alt="רביע טכנאי">
+        </div>
+        <a href="https://wa.me/972549448001" class="whatsapp-float" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+</body>
+</html>
